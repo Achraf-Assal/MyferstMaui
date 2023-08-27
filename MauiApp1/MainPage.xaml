@@ -2,40 +2,54 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.MainPage">
-
+    
+    <ContentPage.Resources>
+        <x:String x:Key="location">&#xf3c5;</x:String>
+        <x:String x:Key="bookmark">&#xf02e;</x:String>
+    </ContentPage.Resources>
+    
     <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+        <StackLayout>
+            <Label Text="Descover" FontSize="24" FontAttributes="Bold" TextColor="Black" Margin="15"/>
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+            <Frame HeightRequest="280" WidthRequest="180" BackgroundColor="#FFFDF7"
+                   HasShadow="True" Margin="15" CornerRadius="10" HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"  Padding="0">
+                <Grid>
+                    <StackLayout BackgroundColor="Black">
+                        <Image Source="https://cdn.pixabay.com/photo/2015/10/30/20/13/sunrise-1014712_1280.jpg" 
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                           HeightRequest="380" WidthRequest="580"
+                           Opacity="0.8"
+                           Aspect="AspectFill"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Image HeightRequest="20" Aspect="AspectFit" HorizontalOptions="EndAndExpand" Margin="10,5">
+                            <Image.Source >
+                                <FontImageSource FontFamily="FFR" Glyph="{StaticResource bookmark}" Color="Wheat"/>
+                            </Image.Source>
+                        </Image>
+                        <Label Text="Descover" FontSize="18" FontAttributes="None" 
+                               TextColor="Wheat" Margin="10,0" 
+                               VerticalOptions="EndAndExpand"/>
+                        <StackLayout Orientation="Horizontal" Margin="10,0" >
+                            <!--<Label Text="Icon" FontSize="16" TextColor="Wheat" VerticalOptions="EndAndExpand" />-->
+                            <Image HeightRequest="18" Aspect="AspectFit" >
+                                <Image.Source >
+                                    <FontImageSource FontFamily="FFS" Glyph="{StaticResource location}" Color="Wheat"/>
+                                </Image.Source>
+                            </Image>
+                            <Label Text="Nor way" FontSize="16" FontAttributes="None" 
+                               TextColor="Wheat" Margin="3"
+                               VerticalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </Frame>           
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
+        </StackLayout>
     </ScrollView>
 
 </ContentPage>
