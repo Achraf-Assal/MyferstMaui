@@ -25,10 +25,14 @@
                            Aspect="AspectFill"/>
                     </StackLayout>
                     <StackLayout>
-                        <Image HeightRequest="20" Aspect="AspectFit" HorizontalOptions="EndAndExpand" Margin="10,5">
+                        <Image Aspect="AspectFit" HorizontalOptions="End" HeightRequest="20" WidthRequest="20" Margin="10" >
                             <Image.Source >
-                                <FontImageSource FontFamily="FFR" Glyph="{StaticResource bookmark}" Color="Wheat"/>
+                                <FontImageSource FontFamily="FFR" Glyph="{StaticResource bookmark}" Color="Wheat"  />
                             </Image.Source>
+                            <Image.GestureRecognizers >
+                                <TapGestureRecognizer Tapped="ChangeIcon"
+                              NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
                         </Image>
                         <Label Text="Descover" FontSize="18" FontAttributes="None" 
                                TextColor="Wheat" Margin="10,0" 
