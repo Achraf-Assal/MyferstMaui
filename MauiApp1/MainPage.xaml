@@ -27,7 +27,7 @@
                     <StackLayout>
                         <Image Aspect="AspectFit" HorizontalOptions="End" HeightRequest="20" WidthRequest="20" Margin="10" >
                             <Image.Source >
-                                <FontImageSource FontFamily="FFR" Glyph="{StaticResource bookmark}" Color="Wheat"  />
+                                <FontImageSource x:Name="Icon" FontFamily="FFR" Glyph="{StaticResource bookmark}" Color="Wheat"  />
                             </Image.Source>
                             <Image.GestureRecognizers >
                                 <TapGestureRecognizer Tapped="ChangeIcon"
